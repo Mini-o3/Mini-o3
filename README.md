@@ -59,7 +59,7 @@ Training consists of two stages.
 We recommend to use the popular [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) to perform SFT on our cold-start data. We use [Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) as the base model.
 
 1. Install [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory).
-2. Use the script `scripts/preprocess_coldstart.py` to download [Mini-o3-Coldstart-Dataset](Mini-o3/Mini-o3-Coldstart-Dataset) and produce the required data format by LLaMA-Factory. This script automatically extracts images and generates a JSON file from the original parquet-format dataset.
+2. Use the script `scripts/preprocess_coldstart.py` to download [Mini-o3-Coldstart-Dataset](https://huggingface.co/datasets/Mini-o3/Mini-o3-Coldstart-Dataset) and produce the required data format by LLaMA-Factory. This script automatically extracts images and generates a JSON file from the original parquet-format dataset.
 ```
 python3 scripts/preprocess_coldstart.py --dataset_path Mini-o3/Mini-o3-Coldstart-Dataset --output_dir [YOUR_DATASET_FOLDER]
 ```
@@ -267,7 +267,7 @@ We would like to thank the following repos for their great work:
 
 ## License
 [![Code License](https://img.shields.io/badge/Code%20License-Apache_2.0-yellow.svg)](https://github.com/Mini-o3/Mini-o3/blob/main/LICENSE)
-[![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-orange.svg)](https://github.com/Mini-o3/Mini-o3/blob/main/DATA_LICENSE)
-[![Weight License](https://img.shields.io/badge/Weight%20License-CC%20By%20NC%204.0-red)](https://github.com/Mini-o3/Mini-o3/blob/main/WEIGHT_LICENSE)
+[![Data License](https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-orange.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Weight License](https://img.shields.io/badge/Weight%20License-CC%20By%20NC%204.0-red)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 The data and checkpoint is intended and licensed for research use only. They are also restricted to uses that follow the license agreement of Qwen2.5-VL. The dataset is CC BY NC 4.0 (allowing only non-commercial use) and models trained using the dataset should not be used outside of research purposes.
