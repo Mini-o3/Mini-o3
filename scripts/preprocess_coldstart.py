@@ -42,9 +42,9 @@ def main(dataset_path, output_dir):
 
     json_data = processed_dataset.to_pandas().to_dict(orient="records")
     for item in tqdm(json_data):
-        image_path_list = item['images'].tolist()
-        item["conversations"] = item["conversations"].tolist()
-        item["images"] = [image_path['path'] for image_path in image_path_list]
+        image_path_list = item['images'].tolist() if hasattr(item['images'], 'tolist') else list(item['images'])
+        item["conversations"] = item["conversations"].tolist() if hasattr(item["conversations"], "tolist") else list(item["conversations"])
+        item["images"] = [image_path['path'] if isinstance(image_path, dict) else str(image_path) for image_path in image_path_list]
     with open(json_path, "w") as f:
         json.dump(json_data, f, indent=4)
 
